@@ -1,0 +1,269 @@
+<!-- HTML file for add supplier 
+	 made by Adam Czaplewski
+	 C00263447. This website 
+	 allow the user to add 
+     a new supplier record
+     into the database (Supplier table) -->
+<!DOCTYPE HTML >
+<!--Language tag for html -->
+<html lang="en">
+<head>
+<!--Character encoding tag -->	
+<meta charset="UTF-8">
+<!--title of the page-->	
+<title>Add a new supplier</title>
+<!--link to external style sheets addsupplier-->
+<link rel="stylesheet" href="addsupplier.css">
+<!--link to the Google fonts-->	
+<link href="https://fonts.googleapis.com/css?family=Merriweather%7CMontserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+<!--The main wraper div tag for the website controlling width and dimensions-->
+<div id="wrapper">
+<!--Set up flex div for header with three columns-->	
+<header class="flexheader">
+<!--The header of the page with The Garage logo, Auto Repair Ireland title ,and car image-->	
+	<div class="headercolumn1">
+		<div><img src="Images/logo.png" height="120" width="190" alt="Logo Image"></div>
+	</div>
+	<div class="headercolumn2">
+		<div><h1 id="title"><u><span style="color: red">Auto</span><span style ="color : #0E59B4">Repair</span></u><br>&nbsp;&nbsp;&nbsp;&nbsp;Ireland</h1></div>
+	</div>
+	<div class="headercolumn3">
+		<div><img src="Images/Car.png" height="120" width="200" alt="Car Image" ></div>
+	</div>
+</header>
+<!--Outline HTML and CSS code for hoverable dropdown menu from W3Schools link: https://www.w3schools.com/howto/howto_css_dropdown.asp -->
+<!--Divs for dropdown nav bar -->
+<nav class="dropdownnavmenu">
+   <a href="../index.html">Home</a>
+  <div class="dropdown">
+	<!--Set up buttons and divs for menus with dropdown content -->
+	<!--Button for Bookings Menu -->
+    <button class="dropbtn">Bookings Menu
+    </button>
+		<div class="dropdown-content">
+		  <a href="../Daniel/booking.php">Make a Booking</a>
+		  <a href="../Daniel/cancelbooking.php">Cancel a Booking</a>
+		</div>
+	</div>
+	<div class="dropdown">
+	<!--Button for Jobs Menu -->
+    <button class="dropbtn">Jobs Menu  
+    </button>
+		<div class="dropdown-content">
+		  <a href="CommencementJob.html.php">Commencement of Job</a>
+		  <a href="CompletionJob.php">Completion of Job</a>
+		</div>
+	</div>
+	<div class="dropdown">
+	<!--Button for Stock Control Menu -->
+    <button class="dropbtn">Stock Control Menu  
+    </button>
+		<div class="dropdown-content">
+		  <a href="../stub.html">Reorder Stock</a>
+		  <a href="../stub.html">Receive Deliveries</a>
+		</div>
+	</div>
+	<div class="dropdown">
+	<!--Button for Supplier Accounts -->	
+    <button class="dropbtn">Supplier Accounts 
+    </button>
+		<div class="dropdown-content">
+		  <a href="../Eduardo/newinvoice.html">New Invoices from Supplier</a>
+		  <a href="../Eduardo/receivedelivery.html">Payment to Suppliers</a>
+		</div>
+	</div>
+	<div class="dropdown">
+	<!--Button for File Maintenance Menu -->
+    <button class="dropbtn">File Maintenance  
+    </button>
+		<div class="dropdown-content">
+		  <a href="../Shane/addemployee.php">Add a New Employee</a>
+		  <a href="../Shane/deleteemployee.php">Delete an employee</a>
+		  <a href="../Shane/amendemployee.php">Amend/View an employee</a>
+		  <a href="../Daniel/addCustomer.html">Add a New Customer</a>
+		  <a href="../deletecustomer.html">Delete an Customer</a>
+		  <a href="../Daniel/amendCustomer.html.php">Amend/View an Customer</a>
+		  <a href="addsupplier.html">Add a New Supplier</a>
+		  <a href="../stub.html">Delete an Supplier</a>
+		  <a href="amendsupplier2.php">Amend/View an Supplier</a>
+		  <a href="../Eduardo/AddItem.html">Add a New Stock Item</a>
+		  <a href="../stub.html">Delete an Stock Item</a>
+		  <a href="../Eduardo/Amenditem.php">Amend/View an Stock Item</a>
+		</div>
+	</div>
+	<div class="dropdown">
+	<!--Button for Reports Menu -->
+    <button class="dropbtn">Reports Menu  
+    </button>
+		<div class="dropdown-content">
+		  <a href="../stub.html">Stock Status Report</a>
+		  <a href="../stub.html">Jobs Report</a>
+		  <a href="../stub.html">Unpaid Invoice Report</a>
+		</div>
+	</div>
+	<!--Link for Quit Option -->
+	<a href="../Shane/login.php">Quit</a>
+</nav>
+<div class="flexcontainer">
+<div class="flexsidemenu">
+	<div>
+	<h3>Supplier/Job menu</h3>
+	<ul class="navmenu">
+	  <li><a href="amendsupplier2.php" >Amend/View Supplier</a></li>
+	  <li><a href="CommencementJob.html.php" >Commencement of Job</a></li> 
+	  <li><a href="CompletionJob.php" >Completion of Job</a></li> 
+	</ul>
+	<!--Remove page breaks as content is added -->
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+</div>
+<div class="content">
+<div class="formcontainer">
+<!--When form is filled and the submit button was clicked, 
+    the form data is sent for processing to the addsupplier.php-->
+<form action="addsupplier.php" method="POST">
+<!--It sets up the content at the top of the form-->	
+<h1><br><div class="title"><img src="Images/addsupplier.png" height= "150" width= "150" alt="add supplier" class="supa"><span style="color:gold" >Add New Supplier</span><img src="Images/addsupplier.png" height= "150" width= "150" alt="Italian Trulli" class="supb"></div></h1>
+<!--the top part of the form-->	
+<fieldset>
+<!--Supplier name section with an input box for the supplier name,
+and validation with text displays as a helper for the user
+what kind of text should be entered in-->	 
+  <legend>Supplier name</legend>
+  <div class="inputbox">
+  <label for="fname">Name:</label>
+  <input type="text" id="name" name="name" title="The input should be the name" placeholder="Enter a name" pattern="[a-zA-Z\s]+" required><br>
+  </div>
+  </fieldset>
+  <br>
+  <fieldset>
+<!--Supplier address section with an input box: street number,
+street name, town, county, country, and  validation for
+each of the input boxes with text displays as a helper for the user
+what kind of text should be entered in-->	  
+  <legend>Supplier address</legend>
+  <div class="formsections">
+  <div class="fields">
+  <div class="inputbox">
+  <label for="street">Street number:</label>
+  <input type="text" id="addline1" name="addline1" title="The input should be a street number" placeholder="Enter the street number" pattern="[0-9\s]+" required><br>
+  </div>
+  </div>
+  <div class="fields">
+  <div class="inputbox">
+  <label for="street">Street name:</label>
+  <input type="text" id="street" name="street" title="The input should be a street" placeholder="Enter the street name" pattern="[A-Za-z\s]+" required><br>
+  </div>
+  </div>
+  </div>
+  <div class="formsections">
+  <div class="fields">
+  <div class="inputbox">
+  <label for="town">Town:</label>
+  <input type="text" id="town" name="town" title="The input should be your town" placeholder="Enter the town" pattern="[A-Za-z\s]+" required><br>
+  </div>
+  </div>
+  <div class="fields">
+  <div class="inputbox">
+  <label for="county">County:</label>
+  <input type="text" id="county" name="county" title="The input should be your county" placeholder="Enter county" pattern="[A-Za-z\s]+" required><br>
+  </div>
+  </div>
+  </div>
+  <div class="inputbox">
+  <label for="county">Country:</label>
+  <input type="text" id="country" name="country" title="The input should be your country" placeholder="Enter country" pattern="[A-Za-z\s]+"required><br>
+  </div>
+  </fieldset>
+  <br>
+<!--Supplier contact details section with an input box: phone number,
+the website address, email address, and  validation for
+each of the input boxes with text displays as a helper for the user
+what kind of text should be entered in-->	
+  <fieldset>
+  <legend>Supplier contact details</legend>
+  <div class="inputbox">
+  <label for="phone number">Phone number:</label>
+  <input type="text" id="phonenumber" name="phonenumber" title="The input should XXX-XXX-XXX" placeholder="123456789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br>
+  </div>
+  <div class="inputbox">
+  <label for="website">Website address:</label>
+  <input type="url" id="website" name="website" title="The input should be your website" placeholder="https://example.com" required><br>
+  </div>
+    <div class="inputbox">
+  <label for="email">Email address:</label>
+  <input type="email" id="email" name="email" title="The input should be your email" placeholder="Enter an email" required><br>
+  </div><br>
+  </fieldset>
+ <br>
+		<div class="mybutton">
+			<!--Add Supplier and Clear buttons
+                When Add Supplier button is clicked
+                confirmcheck() function is called.
+                It will return true when user press ok
+                and false if press cancel. Clear button
+                will clear all the input fields-->
+			<input type ="submit" class ="button" onclick="return confirmcheck()" value= "Add Supplier">
+			<input type ="reset" class ="button" value= "Clear">
+			<br>
+			<br>
+			<br>
+		</div>
+		<br><br>
+<br><br>
+<br>
+</form>
+</div>
+</div>	
+</div>
+<footer>	
+<!--Footer with flex container and three columns -->	
+	<div class="flexfooterbox">
+		<!--Div for left column -->
+		<div id ="footerleft">
+			<h3>Contact Info</h3>
+			<p>12 Merriweather Business Park, Abbeyfield,<br>Carlow, Co.Carlow, R34WT76.<br><br>(045) 4332211<br><br>info@autorepairreland.ie</p>
+		</div>
+		<!--Div for middle column -->
+		<div id = "footermiddle">
+			<a Href="addsupplier.html" style="text-align:center">Back to Top</a>
+		</div>
+		<!--Div for right column -->
+		<div id = "footerright">
+			<h3>Opening Hours</h3>
+			<!--Right column, seperating into two flex columns -->
+			<div class="flexbox">
+				<div class = "flexcolumn">
+					<p style="text-align:left"> Monday<br> Tuesday  <br>Wednesday  <br>	Thursday <br>Friday <br>Sat/Sun </p>
+				</div>
+				<div class = "flexcolumn">
+					<p style="text-align:left ; color : #0556a8"> 09:00AM - 05:00PM <br> 09:00AM - 05:00PM  <br>09:00AM - 05:00PM  <br>	09:00AM - 05:00PM <br>09:00AM - 05:00PM <br>Closed </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script>
+//Script section for function confirmcheck() which displays a dialog box with a message, 
+//'Do you want add the record to the database?'and OK button, and a Cancel button.
+//The confirm() method returns true if the user clicked "OK", otherwise false.
+	function confirmcheck()
+	{	
+		var response;
+		response = confirm('Do you want add the record to the database?');
+		 
+		if(response)
+		{	
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+</script>
+</div>
+</body>
+</html>
